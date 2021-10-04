@@ -11,7 +11,7 @@ return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
         SettingsInterface::class => function () {
             return new Settings([
-                'displayErrorDetails' => $_ENV['PRODUCTION_MODE'],
+                'displayErrorDetails' => PRODUCTION_MODE,
                 'logError'            => false,
                 'logErrorDetails'     => false,
                 'logger' => [

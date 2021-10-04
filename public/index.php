@@ -14,12 +14,13 @@ require __DIR__ . '/../vendor/autoload.php';
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
 
-if (false) { // Should be set to true in production
+$settings = require __DIR__ . '/../app/bootstrap.php';
+
+if (DEBUG_MODE) {
 	$containerBuilder->enableCompilation(__DIR__ . '/../var/cache');
 }
 
 // Set up settings
-$settings = require __DIR__ . '/../app/settings.php';
 $settings($containerBuilder);
 
 // Set up dependencies
