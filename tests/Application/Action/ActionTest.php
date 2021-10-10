@@ -21,7 +21,8 @@ class ActionTest extends TestCase
         $testAction = new class($logger) extends Action {
             public function __construct(
                 LoggerInterface $loggerInterface
-            ) {
+            )
+            {
                 parent::__construct($loggerInterface);
             }
 
@@ -54,7 +55,8 @@ class ActionTest extends TestCase
         $testAction = new class($logger) extends Action {
             public function __construct(
                 LoggerInterface $loggerInterface
-            ) {
+            )
+            {
                 parent::__construct($loggerInterface);
             }
 

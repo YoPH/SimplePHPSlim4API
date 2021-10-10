@@ -28,10 +28,10 @@ class User implements JsonSerializable
     private $lastName;
 
     /**
-     * @param int|null  $id
-     * @param string    $username
-     * @param string    $firstName
-     * @param string    $lastName
+     * @param int|null $id
+     * @param string $username
+     * @param string $firstName
+     * @param string $lastName
      */
     public function __construct(?int $id, string $username, string $firstName, string $lastName)
     {

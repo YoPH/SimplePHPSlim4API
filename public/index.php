@@ -5,9 +5,6 @@ use App\Application\Handler\HttpErrorHandler;
 use App\Application\Handler\ShutdownHandler;
 use App\Application\ResponseEmitter\ResponseEmitter;
 use App\Application\Setting\SettingsInterface;
-use DI\ContainerBuilder;
-use Slim\Factory\AppFactory;
-use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 

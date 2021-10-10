@@ -28,8 +28,8 @@ class ActionError implements JsonSerializable
     private $description;
 
     /**
-     * @param string        $type
-     * @param string|null   $description
+     * @param string $type
+     * @param string|null $description
      */
     public function __construct(string $type, ?string $description)
     {

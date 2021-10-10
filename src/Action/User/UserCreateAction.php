@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Action\User;
 
 use App\Domain\User\Service\UserCreator;
+use PH7\JustHttp\StatusCode;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -20,7 +21,8 @@ final class UserCreateAction
     public function __invoke(
         ServerRequestInterface $request,
         ResponseInterface $response
-    ): ResponseInterface {
+    ): ResponseInterface
+    {
         // Collect input from the HTTP request
         $data = (array)$request->getParsedBody();
 
@@ -37,6 +39,6 @@ final class UserCreateAction
 
         return $response
             ->withHeader('Content-Type', 'application/json')
-            ->withStatus(201);
+            ->withStatus(StatusCode::CREATED);
     }
 }

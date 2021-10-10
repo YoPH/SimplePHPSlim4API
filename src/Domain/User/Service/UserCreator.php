@@ -6,9 +6,13 @@ namespace App\Domain\User\Service;
 
 use App\Domain\User\Repository\UserCreatorRepository;
 use App\Exception\ValidationException;
+use Valitron\Validator;
 
 final class UserCreator
 {
+    private const MIN_LENGTH_USERNAME = 2
+    private const MAX_LENGTH_USERNAME = 16;
+
     /**
      * @var UserCreatorRepository
      */
@@ -50,28 +54,19 @@ final class UserCreator
      *
      * @param array $data The form data
      *
+     * @return void
      * @throws ValidationException
      *
-     * @return void
      */
     private function validateNewUser(array $data): void
     {
-        $errors = [];
+        $validator = new Validator($data);
+        $validator->rule('required', ['username', 'email']);
+        $validator->rule('email', 'email');
+        $validator->rule('lengthBetween', 'username', self::MIN_LENGTH_USERNAME, self::MAX_LENGTH_USERNAME);
 
-        // TODO Use PHP validatin library to validate username and email
-
-        if (empty($data['username'])) {
-            $errors['username'] = 'Input required';
-        }
-
-        if (empty($data['email'])) {
-            $errors['email'] = 'Input required';
-        } elseif (filter_var($data['email'], FILTER_VALIDATE_EMAIL) === false) {
-            $errors['email'] = 'Invalid email address';
-        }
-
-        if ($errors) {
-            throw new ValidationException('Please check your input', $errors);
+        if (!$validator->validate()) {
+            throw new ValidationException('Please check your input', implode(', ', $validator->errors()));
         }
     }
 }
