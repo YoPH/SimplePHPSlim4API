@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Application\Handler;
 
-use App\Application\Action\ActionError;
-use App\Application\Action\ActionPayload;
+use App\Action\ActionError;
+use App\Action\ActionPayload;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\HttpBadRequestException;

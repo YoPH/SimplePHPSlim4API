@@ -1,25 +1,33 @@
 <?php
-declare(strict_types=1);
 
-use App\Application\Setting\Settings;
-use App\Application\Setting\SettingsInterface;
-use DI\ContainerBuilder;
-use Monolog\Logger;
+// Should be set to 0 in production
+error_reporting(E_ALL);
 
-return function (ContainerBuilder $containerBuilder) {
-    // Global Settings Object
-    $containerBuilder->addDefinitions([
-        SettingsInterface::class => function () {
-            return new Settings([
-                'displayErrorDetails' => PRODUCTION_MODE,
-                'logError'            => false,
-                'logErrorDetails'     => false,
-                'logger' => [
-                    'name' => 'slim-app',
-                    'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
-                    'level' => Logger::DEBUG,
-                ],
-            ]);
-        }
-    ]);
-};
+// Should be set to '0' in production
+ini_set('display_errors', IS_DEBUG_MODE);
+
+// Timezone
+date_default_timezone_set($_ENV['TIMEZONE'] ?? 'Europe/Dublin');
+
+// Settings
+$settings = [];
+
+// Path settings
+$settings['root'] = dirname(__DIR__);
+
+// Error Handling Middleware settings
+$settings['error'] = [
+
+    // Should be set to false in production
+    'display_error_details' => IS_DEBUG_MODE,
+
+    // Parameter is passed to the default ErrorHandler
+    // View in rendered output by enabling the "displayErrorDetails" setting.
+    // For the console and unit tests we also disable it
+    'log_errors' => IS_DEBUG_MODE,
+
+    // Display error details in error log
+    'log_error_details' => IS_DEBUG_MODE,
+];
+
+return $settings;

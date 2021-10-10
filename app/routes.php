@@ -12,16 +12,5 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
     $app->get('/', \App\Action\HomeAction::class)->setName('home');
-
-    $app->options('/{routes:.*}', function (Request $request, Response $response) {
-        // CORS Pre-Flight OPTIONS Request Handler
-        return $response;
-    });
-
-    $app->get('/{name}', function (Request $request, Response $response, array $args) {
-        $response->getBody()->write('Hello ' . $args['name']);
-        return $response;
-    });
-
     $app->post('/users', UserCreateAction::class);
 };

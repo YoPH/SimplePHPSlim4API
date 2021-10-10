@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\Action\User;
+namespace App\Action\User;
 
-use App\Application\Action\Action;
+use App\Action\Action;
 use App\Domain\User\UserRepository;
 use Psr\Log\LoggerInterface;
 
