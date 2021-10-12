@@ -11,7 +11,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 final class UserCreateAction
 {
-    private $userCreator;
+    private object $userCreator;
 
     public function __construct(UserCreator $userCreator)
     {

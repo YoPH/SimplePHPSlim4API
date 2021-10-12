@@ -5,9 +5,6 @@ namespace App\Domain\User\Repository;
 
 use PDO;
 
-/**
- * Repository.
- */
 final class UserCreatorRepository
 {
     private const SQL_INSERT_USER = 'INSERT INTO users SET 
