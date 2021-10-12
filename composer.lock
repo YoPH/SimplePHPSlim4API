@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6965e9b05b081e5d3666765e96a87bf6",
+    "content-hash": "29658bbe86b6003d27141df96b81c3c2",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -863,16 +863,16 @@
         },
         {
             "name": "ph-7/just-http-status-codes",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pH-7/JustHttpStatusCodes.git",
-                "reference": "4f4da3b476bf7f793afcb7ed0a96fc55a04dce12"
+                "reference": "3b6346f69006c103764c00446edfb675a208997a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pH-7/JustHttpStatusCodes/zipball/4f4da3b476bf7f793afcb7ed0a96fc55a04dce12",
-                "reference": "4f4da3b476bf7f793afcb7ed0a96fc55a04dce12",
+                "url": "https://api.github.com/repos/pH-7/JustHttpStatusCodes/zipball/3b6346f69006c103764c00446edfb675a208997a",
+                "reference": "3b6346f69006c103764c00446edfb675a208997a",
                 "shasum": ""
             },
             "require": {
@@ -915,9 +915,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pH-7/JustHttpStatusCodes/issues",
-                "source": "https://github.com/pH-7/JustHttpStatusCodes/tree/v1.0.2"
+                "source": "https://github.com/pH-7/JustHttpStatusCodes/tree/v1.1.0"
             },
-            "time": "2021-10-10T08:33:13+00:00"
+            "time": "2021-10-11T10:27:49+00:00"
         },
         {
             "name": "php-di/invoker",
