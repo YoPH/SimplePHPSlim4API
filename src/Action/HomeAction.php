@@ -19,6 +19,6 @@ final class HomeAction
 
         return $response
             ->withHeader('Content-Type', 'application/json')
-            ->withStatus(StatusCode::CREATED);
+            ->withStatus(StatusCode::OK);
     }
 }
