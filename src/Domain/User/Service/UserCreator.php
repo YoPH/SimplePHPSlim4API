@@ -10,7 +10,7 @@ use Valitron\Validator;
 
 final class UserCreator
 {
-    private const MIN_LENGTH_USERNAME = 2
+    private const MIN_LENGTH_USERNAME = 2;
     private const MAX_LENGTH_USERNAME = 16;
 
     private UserCreatorRepository $repository;
