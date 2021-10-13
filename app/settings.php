@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', IS_DEBUG_MODE);
 
 // Timezone
-date_default_timezone_set($_ENV['TIMEZONE'] ?? 'Europe/Dublin');
+date_default_timezone_set($_ENV['TIMEZONE'] ?? 'Europe/London');
 
 // Settings
 $settings = [];
