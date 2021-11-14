@@ -8,9 +8,6 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class ListUsersAction extends UserAction
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function action(): Response
     {
         $users = $this->userRepository->findAll();

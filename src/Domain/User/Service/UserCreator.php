@@ -15,11 +15,6 @@ final class UserCreator
 
     private UserCreatorRepository $repository;
 
-    /**
-     * The constructor.
-     *
-     * @param UserCreatorRepository $repository The repository
-     */
     public function __construct(UserCreatorRepository $repository)
     {
         $this->repository = $repository;
@@ -34,27 +29,13 @@ final class UserCreator
      */
     public function createUser(array $data): int
     {
-        // Input validation
         $this->validateNewUser($data);
 
-        // Insert user
         $userId = $this->repository->insertUser($data);
-
-        // Logging here: User created successfully
-        //$this->logger->info(sprintf('User created successfully: %s', $userId));
 
         return $userId;
     }
 
-    /**
-     * Input validation.
-     *
-     * @param array $data The form data
-     *
-     * @return void
-     * @throws ValidationException
-     *
-     */
     private function validateNewUser(array $data): void
     {
         $validator = new Validator($data);

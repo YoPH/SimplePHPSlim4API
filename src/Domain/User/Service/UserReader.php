@@ -20,24 +20,20 @@ final class UserReader
     /**
      * Read a user by the given user id.
      *
-     * @param int $userId The user id
-     *
-     * @throws ValidationException
+     * @param int|null $userId The user id
      *
      * @return UserReaderResult The user data
+     *
+     * @throws ValidationException
      */
-    public function getUserDetails(int $userId): UserReaderResult
+    public function getUserDetails(?int $userId): UserReaderResult
     {
-        // Input validation
         if (empty($userId)) {
             throw new ValidationException('User ID required');
         }
 
         $userRow = $this->repository->getUserById($userId);
 
-        // Optional: Do something complex here...
-
-        // Map array to data object
         $user = new UserReaderResult();
         $user->id = (int)$userRow['id'];
         $user->username = (string)$userRow['username'];
