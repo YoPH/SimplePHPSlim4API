@@ -1,4 +1,4 @@
-# Files/folders to be excluded for distrubtion
+# Files/folders to be excluded for distribution
 /.github export-ignore
 /tests export-ignore
 CONTRIBUTING.md export-ignore
