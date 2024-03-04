@@ -1,5 +1,11 @@
 # Slim Framework 4 Skeleton Application
 
+
+[![Watch the video](https://i1.ytimg.com/vi/-1k88orLINg/maxresdefault.jpg)](https://youtu.be/-1k88orLINg)
+
+👉 **[Click Here to watch on YouTube](https://youtu.be/-1k88orLINg)**, me building a simple Slim 4 Project with PHP
+
+
 [![Coverage Status](https://coveralls.io/repos/github/slimphp/Slim-Skeleton/badge.svg?branch=master)](https://coveralls.io/github/slimphp/Slim-Skeleton?branch=master)
 
 Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation. It also uses the Monolog logger.
